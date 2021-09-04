@@ -1,0 +1,6 @@
+Version="1.0.0.dev0"
+Authors=['Nachtalb']
+Name="Listenbrainz Now"
+Description="Listenbrainz now playing integration"
+Repository="Nachtalb/listenbrainz_now"
+Prefix="foo"

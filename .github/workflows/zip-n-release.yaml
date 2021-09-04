@@ -1,0 +1,25 @@
+name: zip-n-release
+on:
+  push:
+    tags:
+      - "v*.*.*"
+jobs:
+  zip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ env.GITHUB_REF }}
+          path: listenbrainz_now
+      - name: zip
+        uses: thedoctor0/zip-release@master
+        with:
+          filename: 'listenbrainz_now.zip'
+          path: 'listenbrainz_now'
+          exclusions: 'listenbrainz_now/*.git* listenbrainz_now/.gitgub listenbrainz_now/.gitignore listenbrainz_now/.flake8 listenbrainz_now/DESCRIPTION listenbrainz_now/releaser'
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: 'listenbrainz_now.zip'
+          draft: true

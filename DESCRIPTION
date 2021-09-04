@@ -1,0 +1,12 @@
+Listenbrainz now playing integration
+
+# USAGE #
+
+Available Commands:
+"/foo-update"  Check for updates
+"/foo-reload"  Reload the plugin code
+
+# CREDIT #
+
+Author: https://github.com/Nachtalb
+Source: https://github.com/Nachtalb/listenbrainz_now
