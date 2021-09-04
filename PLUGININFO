@@ -1,6 +1,6 @@
-Version="1.0.0.dev0"
+Version="1.0.0"
 Authors=['Nachtalb']
 Name="Listenbrainz Now"
-Description="Listenbrainz now playing integration"
+Description="Listenbrainz now playing integration\n\n# USAGE #\n\nAvailable Commands:\n\"/lb\"  Send currently playing song to chat\n\"/lb-update\"  Check for updates\n\"/lb-reload\"  Reload the plugin code\n\n# CREDIT #\n\nAuthor: https://github.com/Nachtalb\nSource: https://github.com/Nachtalb/listenbrainz_now"
 Repository="Nachtalb/listenbrainz_now"
 Prefix="lb"
