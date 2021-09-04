@@ -9,7 +9,8 @@ from .utils import command, get
 class Plugin(BasePlugin):
     settings = {
         'username': '',
-        'command': '/me is now Playing: {artist} - {title}'
+        'command': '/me is now Playing: {artist} - {title}',
+        'append_link': True,
     }
     metasettings = {
         'username': {
@@ -20,6 +21,10 @@ class Plugin(BasePlugin):
             'description': '''Now playing message format
 Placeholders: {artist}, {album}, {title}''',
             'type': 'string',
+        },
+        'append_link': {
+            'description': 'Append link if available',
+            'type': 'bool',
         },
     }
 
@@ -42,6 +47,10 @@ Placeholders: {artist}, {album}, {title}''',
             msg = self.settings['command'].format(artist=track['artist_name'],
                                                   album=track['release_name'],
                                                   title=track['track_name'])
+
+            if self.settings['append_link'] and (link := track.get('additional_info', {}).get('origin_url')):
+                msg += ' - Listen to it here: ' + link
+
             func = self.send_public if public else self.send_private
             func(initiator, msg)
         else:
