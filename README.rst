@@ -42,6 +42,8 @@ Settings
 | Now playing message   | What to send to the chat when using ``/lb``                                             | `'/me is now Playing: {artist} - {title}'`                           |
 |                       | Available placeholders: {artist}, {album} & {title}                                     |                                                                      |
 +-----------------------+-----------------------------------------------------------------------------------------+----------------------------------------------------------------------+
+| Append link           | Some listeners report the stream link to Listenbrainz. Show that link if available      | Enabled                                                              |
++-----------------------+-----------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 
 
 Contributing
