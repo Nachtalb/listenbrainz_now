@@ -3,8 +3,9 @@ Listenbrainz now playing integration
 # USAGE #
 
 Available Commands:
-"/foo-update"  Check for updates
-"/foo-reload"  Reload the plugin code
+"/lb"  Send currently playing song to chat
+"/lb-update"  Check for updates
+"/lb-reload"  Reload the plugin code
 
 # CREDIT #
 
