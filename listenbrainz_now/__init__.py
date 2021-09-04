@@ -1,11 +1,9 @@
 from functools import partial
 import json
-from urllib.request import urlopen
-
 from pynicotine.pluginsystem import returncode
 
 from .base import BasePlugin
-from .utils import command
+from .utils import command, get
 
 
 class Plugin(BasePlugin):
@@ -34,8 +32,8 @@ Placeholders: {artist}, {album}, {title}''',
             return returncode['zap']
 
         try:
-            with urlopen(f'https://api.listenbrainz.org/1/user/{username}/playing-now') as resp:
-                data = json.load(resp)['payload']
+            with get(f'https://api.listenbrainz.org/1/user/{username}/playing-now') as resp:
+                data = resp.json['payload']
         except Exception as e:
             echo(initiator, f'Could not get now-playing data: {e}', 'action')
             return returncode['zap']
